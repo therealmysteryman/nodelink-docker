@@ -1,5 +1,7 @@
 FROM mono:latest
 
+RUN apt-get update && apt-get dist-upgrade -y
+RUN apt-get -qqy install wget
 RUN mkdir /NodeLink
 
 EXPOSE 8090
