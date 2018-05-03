@@ -1,13 +1,12 @@
-FROM mono:5.8.0.127
+FROM mono:latest
 
-RUN apt-get update && apt-get dist-upgrade -y
-RUN apt-get -qqy install wget
-
-RUN mkdir /NodeLink
+RUN apt-get update && \
+apt-get -y install wget && \
+mkdir /NodeLink
 
 EXPOSE 8090
 
-COPY startup.sh /usr/local/myscripts/mystart.sh
-VOLUME NodeLink
+COPY startup.sh /
+VOLUME /NodeLink
 
-CMD ["/bin/bash", "/usr/local/myscripts/mystart.sh"]
+ENTRYPOINT ["/startup.sh"]
