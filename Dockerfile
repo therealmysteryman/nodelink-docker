@@ -1,4 +1,4 @@
-FROM mono:latest-slim
+FROM mono:slim
 
 RUN apt-get update && apt-get dist-upgrade -y
 RUN apt-get -qqy install wget
