@@ -4,4 +4,4 @@ if [ ! -e "/NodeLink/NodeLink.exe" ]; then
   wget http://automationshack.com/Files/NodeLink.exe
 fi
 exec mono /NodeLink/NodeLink.exe &
-exec /bin/bash
+exec tail -f /dev/null
