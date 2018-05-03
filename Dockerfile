@@ -1,12 +1,16 @@
-FROM mono:latest
+FROM ubuntu:latest
 
-RUN apt-get update && apt-get dist-upgrade -y
-RUN apt-get -qqy install wget
-RUN mkdir /NodeLink
-
+# Docker Settings
+##################
 EXPOSE 8090
+VOLUME /config
 
+# Install Dependencies
+##################
+RUN mkdir /NodeLink
+RUN apt-get update && apt-get install -y wget mono-vbnc mono-complete
+
+# Adding Custom files
+##################
 COPY startup.sh /usr/local/myscripts/mystart.sh
-VOLUME NodeLink
-
 CMD ["/bin/bash", "/usr/local/myscripts/mystart.sh"]
