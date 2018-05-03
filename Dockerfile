@@ -9,4 +9,4 @@ RUN mkdir /NodeLink
 
 VOLUME /NodeLink
 
-ENTRYPOINT ["/bin/bash","/startup.sh"]
+ENTRYPOINT ["/startup.sh"]
