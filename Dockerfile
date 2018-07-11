@@ -1,7 +1,6 @@
-FROM mono:latest
+FROM ubuntu:latest
 
-# RUN apt-get update && apt-get dist-upgrade -y
-# RUN apt-get -qqy install wget
+RUN apt-get update && apt-get install -y wget mono-vbnc mono-complete
 
 COPY startup.sh /
 RUN chmod +x startup.sh
